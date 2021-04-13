@@ -1,2 +1,2 @@
-# Neuro Imaging
-Neuro imaging projects and tools
+# Haxby Registration
+> Register Haxby Data to MNI template
