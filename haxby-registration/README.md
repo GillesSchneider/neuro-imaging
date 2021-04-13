@@ -11,6 +11,7 @@ pip install numpy nibabel nilearn dipy tqdm
 
 ## Before Registration
 
-```sh
-pip install numpy nibabel nilearn dipy tqdm
-```
+Example of a BOLD image of Haxby Dasaset shown in the MNI152 template.
+<p align="center">
+  <img  src="./images/before-registration.png">
+</p>
