@@ -1,5 +1,5 @@
 # Haxby Registration 
-> Register Haxby Data to MNI template (~ 3H/subject)
+> Register Haxby [1] to MNI template (~ 3H/subject)
 
 ## Required Packages
 _numpy, nibabel, nilearn, dipy, tqdm_
@@ -36,4 +36,4 @@ plotting.plot_glass_brain(mean_haxby)
 
 ## References
 
-1. Haxby, J., Gobbini, M., Furey, M., Ishai, A., Schouten, J., and Pietrini, P. (2001). Distributed and overlapping representations of faces and objects in ventral temporal cortex. Science 293, 2425-2430.
+[1]. Haxby, J., Gobbini, M., Furey, M., Ishai, A., Schouten, J., and Pietrini, P. (2001). Distributed and overlapping representations of faces and objects in ventral temporal cortex. Science 293, 2425-2430.
