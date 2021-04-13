@@ -7,14 +7,14 @@ Because Haxby is not primarily aligned with MNI 152space, it is impossible to ap
 
 ## Pipeline
 
-1. Get one volume from Haxby 
-2. Initialize affine and rigid registrations
-3. Load MNI152 template and resample it to Haxby
-4. For every subject in Haxby:
-⋅⋅⋅Apply the affine then rigid transformations on every 3D image
-⋅⋅⋅Append the transformed image to a list
-⋅⋅⋅Save the transformed 4D image to folder "./save/subj"
-8. Repeat until every subject is processed
+*  Get one volume from Haxby 
+*  Initialize affine and rigid registrations
+*  Load MNI152 template and resample it to Haxby
+*  For every subject in Haxby:
+   - Apply the affine then rigid transformations on every 3D image
+   - Append the transformed image to a list
+   - Save the transformed 4D image to folder "./save/subj"
+*  Repeat
 
 ## Required Packages
 _numpy, nibabel, nilearn, dipy, tqdm_
