@@ -1,5 +1,5 @@
 # Haxby Registration 
-The tool registers Haxby _[1]_ to MNI152 _[2] & [3]_ (~ 3H/subject).
+The Python code registers Haxby _[1]_ to MNI152 _[2] & [3]_ (~ 3H/subject).
 
 ## Required Packages
 _numpy, nibabel, nilearn, dipy, tqdm_
