@@ -1,4 +1,4 @@
-# Haxby Registration
+# Haxby Registration (~ 3H/subject)
 > Register Haxby Data to MNI template
 
 ## Required Packages
