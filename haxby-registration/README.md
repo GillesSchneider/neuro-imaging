@@ -33,7 +33,7 @@ Example of a Haxby 3D volume in the MNI152 template. The 3D volume is from subje
   <img  src="./images/before-registration.png">
 </p>
 
-The brain schematics is in MNI152 space in the above image. It can be seen that Haxby data is not aligned with MNI152 space.
+_The brain schematics is in MNI152 space. It can be seen that Haxby data is not aligned with MNI152 space_
 
 ```sh
 #Code to print the above image
