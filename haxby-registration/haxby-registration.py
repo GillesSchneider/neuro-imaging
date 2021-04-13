@@ -26,6 +26,14 @@ from nilearn import masking
 
 np.set_printoptions(precision=4,suppress = True)
 
+subjects = (1,2,3,4,5,6)
+haxby = datasets.fetch_haxby(subjects=subjects)
+anat = nb.load(haxby.anat[0])
+bold = nb.load(haxby.func[0])
+
+volume = bold.get_fdata()[:,:,:,0]
+volume = nb.Nifti1Image(volume,bold.affine)
+
 '''
 ...Create a folder for new bold images...
 '''
