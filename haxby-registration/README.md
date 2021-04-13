@@ -10,12 +10,13 @@ pip install numpy nibabel nilearn dipy tqdm
 ```
 
 ## Before Registration
-Example of a Haxby image in the MNI152 template. The brain schematics is in MNI152 space. It can be seen that Haxby data (red/orange) is not in MNI152 space.
+Example of a Haxby image in the MNI152 template.
 
 <p align="center">
   <img  src="./images/before-registration.png">
 </p>
 
+The brain schematics is in MNI152 space in the above image. It can be seen that Haxby data (red/orange) is not in MNI152 space.
 Code to print the above image:
 ```sh
 #Import nilearn
