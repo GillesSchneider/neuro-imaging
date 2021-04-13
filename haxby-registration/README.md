@@ -16,9 +16,10 @@ Example of a Haxby image in the MNI152 template.
   <img  src="./images/before-registration.png">
 </p>
 
-The brain schematics is in MNI152 space in the above image. It can be seen that Haxby data (red/orange) is not in MNI152 space.
-_Code to print the above image:_
+The brain schematics is in MNI152 space in the above image. It can be seen that Haxby data is not aligned with MNI152 space.
+
 ```sh
+Code to print the above image:
 #Import nilearn
 from nilearn import datasets 
 from nilearn.image.image import mean_img
