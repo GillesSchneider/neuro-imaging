@@ -1,9 +1,20 @@
 # Haxby Registration 
 The Python code registers Haxby _[1]_ to MNI152 space _[2] & [3]_ (~ 3H/subject).
 
-## Why registering Haxby to MNI space is important?
+## Why do we register Haxby to MNI space?
 
 Because Haxby is not primarily aligned with MNI space, it is impossible to apply parcellations on Haxby using atlases (e.g: Yeo 2011 _[4]_). This way, registering Haxby to MNI space leads to new ways to analyze the dataset.
+
+## Pipeline
+
+1. Get one volume from Haxby 
+2. Initialize affine and rigid registrations
+3. Load MNI152 template and resample it to Haxby
+4. For every subject in Haxby:
+5. Apply the transformations on every 3D image
+6. Append the transformed image to a list
+7. Save the registered 4D image to folder "./save"
+8. Repeat until every subject is processed
 
 ## Required Packages
 _numpy, nibabel, nilearn, dipy, tqdm_
