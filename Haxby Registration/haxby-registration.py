@@ -7,8 +7,6 @@
 # # Haxby (~10 hours)
 import os
 import numpy as np
-np.set_printoptions(precision=4,suppress = True)
-import matplotlib.pyplot as plt
 import nibabel as nb
 from nilearn import datasets
 import dipy
@@ -25,40 +23,45 @@ import nilearn
 from tqdm import tqdm
 from nilearn import plotting
 from nilearn import masking
-subjects = (1,2,3,4,5,6)
-haxby = datasets.fetch_haxby(subjects=subjects)
-anat = nb.load(haxby.anat[0])
-bold = nb.load(haxby.func[0])
 
-volume = bold.get_fdata()[:,:,:,0]
-volume = nb.Nifti1Image(volume,bold.affine)
+np.set_printoptions(precision=4,suppress = True)
 
+'''
+...Create a folder for new bold images...
+'''
 if os.path.exists('./save'):
     pass
 else:
     os.mkdir('./save')
-
-#Affine registration
+    
+'''
+... Set up affine registration
+'''
 nbins = 32
 sampling_prop = None
 level_iters = [1000, 100, 10]
 sigmas = [3.0, 1.0, 0.0]
 factors = [4, 2, 1]
-
-metric = MutualInformationMetric(nbins, sampling_prop)
-affreg = AffineRegistration(metric=metric, level_iters = level_iters, sigmas = sigmas, factors = factors)
-transform = TranslationTransform3D()
 params0 = None
+transform = TranslationTransform3D()
+metric = MutualInformationMetric(nbins, sampling_prop)
+affreg = AffineRegistration(metric = metric, level_iters = level_iters, sigmas = sigmas, factors = factors)
 
-#Non linear registration
+
+'''
+... Set up non linear registration
+... Symmetric Diffeomorphic registration
+'''
 level_iters = [10, 10, 5]
-
 metric = CCMetric(3)
 sdr = SymmetricDiffeomorphicRegistration(metric, level_iters)
 
 #Registration on Haxby subjects
 
-##Load MNI template
+'''
+... Load MNI Template
+... skullstripped 2mm version of the MNI152 originally distributed with FSL
+'''
 template_img = load_mni152_template()
 template_mask = nilearn.datasets.load_mni152_brain_mask()
 template_img = nilearn.image.resample_to_img(template_img,volume)
@@ -67,9 +70,15 @@ template_affine = template_img.affine
 template_data = template_img.get_fdata()
 subj = 0
 
+
+'''
+... Apply registration on every subject
+... TO-DO: Select the subjects
+'''
 for subject in haxby.func:
     
     subj += 1
+    
     ##Load images
     moving_imgs = nb.load(subject)
     
@@ -103,7 +112,6 @@ for subject in haxby.func:
         transformed = mapping.transform(volume)
                 
         nifti_img = nb.Nifti1Image(transformed,template_affine)
-        
         moving_volumes.append(nifti_img)
         
         print("computation time (1 volume)", round(time.process_time() - start_time), "seconds")
@@ -114,8 +122,10 @@ for subject in haxby.func:
      
     ##Concat volumes, then save
     transformed_imgs = nilearn.image.concat_imgs(moving_volumes)
-    
-    
+
+    '''
+    ...Save registred bold images in the corresponding folder...
+    '''
     path = './save/subj{}/'.format(subj)
     
     if os.path.exists(path):
