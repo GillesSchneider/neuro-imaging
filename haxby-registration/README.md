@@ -3,7 +3,7 @@ The Python code registers Haxby _[1]_ to MNI152 space _[2] & [3]_ (~ 3H/subject)
 
 ## Why registering Haxby to MNI space is important?
 
-Because Haxby is not primarily aligned with MNI space, it is impossible to apply parcellations on Haxby using atlases (e.g: Yeo 2011 _[4]_). This way, registering Haxby to MNI space provides us new ways to analyze and understand it deeper than before. 
+Because Haxby is not primarily aligned with MNI space, it is impossible to apply parcellations on Haxby using atlases (e.g: Yeo 2011 _[4]_). This way, registering Haxby to MNI space leads to new ways to analyze, thus understand deeper the dataset.
 
 ## Required Packages
 _numpy, nibabel, nilearn, dipy, tqdm_
