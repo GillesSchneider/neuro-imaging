@@ -11,7 +11,7 @@ Because Haxby is not primarily aligned with MNI 152space, it is impossible to ap
 2. Initialize affine and rigid registrations
 3. Load MNI152 template and resample it to Haxby
 4. For every subject in Haxby:
-5. Apply the affine then rigid on every 3D image
+5. Apply the affine then rigid transformations on every 3D image
 6. Append the transformed image to a list
 7. Save the transformed 4D image to folder "./save"
 8. Repeat until every subject is processed
