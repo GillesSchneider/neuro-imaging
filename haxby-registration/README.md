@@ -1,9 +1,9 @@
 # Haxby Registration 
-The Python code registers [Haxby](#references) to [MNI152 space](#references) (~ 3H/subject).
+The Python code registers [Haxby (1)](#references) to [MNI152 space (2/3)](#references) (~ 3H/subject).
 
 ## Why do we register Haxby to MNI space?
 
-Because Haxby is not primarily aligned with MNI 152space, it is impossible to apply parcellations on the dataset using atlases that are in MNI 152 space (e.g: [Yeo 2011](#references)). This way, registering Haxby to MNI 152 space leads to new ways to analyze the dataset.
+Because Haxby is not primarily aligned with MNI 152space, it is impossible to apply parcellations on the dataset using atlases that are in MNI 152 space (e.g: [Yeo 2011 (3)](#references)). This way, registering Haxby to MNI 152 space leads to new ways to analyze the dataset.
 
 ## Pipeline
 
@@ -60,10 +60,10 @@ python haxby-registration.py
 
 ## References
 
-[1]. Haxby, J., Gobbini, M., Furey, M., Ishai, A., Schouten, J., and Pietrini, P. (2001). Distributed and overlapping representations of faces and objects in ventral temporal cortex. Science 293, 2425-2430.
+1. Haxby, J., Gobbini, M., Furey, M., Ishai, A., Schouten, J., and Pietrini, P. (2001). Distributed and overlapping representations of faces and objects in ventral temporal cortex. Science 293, 2425-2430.
 
-[2]. VS Fonov, AC Evans, K Botteron, CR Almli, RC McKinstry, DL Collins and BDCG, Unbiased average age-appropriate atlases for pediatric studies, NeuroImage, Volume 54, Issue 1, January 2011, ISSN 1053-8119, DOI: 10.1016/j.neuroimage.2010.07.033
+2. VS Fonov, AC Evans, K Botteron, CR Almli, RC McKinstry, DL Collins and BDCG, Unbiased average age-appropriate atlases for pediatric studies, NeuroImage, Volume 54, Issue 1, January 2011, ISSN 1053-8119, DOI: 10.1016/j.neuroimage.2010.07.033
 
-[3]. VS Fonov, AC Evans, RC McKinstry, CR Almli and DL Collins, Unbiased nonlinear average age-appropriate brain templates from birth to adulthood, NeuroImage, Volume 47, Supplement 1, July 2009, Page S102 Organization for Human Brain Mapping 2009 Annual Meeting, DOI: 10.1016/S1053-8119(09)70884-5
+3. VS Fonov, AC Evans, RC McKinstry, CR Almli and DL Collins, Unbiased nonlinear average age-appropriate brain templates from birth to adulthood, NeuroImage, Volume 47, Supplement 1, July 2009, Page S102 Organization for Human Brain Mapping 2009 Annual Meeting, DOI: 10.1016/S1053-8119(09)70884-5
 
-[4]. http://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation_Yeo2011
+4. http://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation_Yeo2011
