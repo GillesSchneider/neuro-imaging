@@ -3,7 +3,7 @@ The Python code registers [Haxby (1)](#references) to [MNI152 space (2/3)](#refe
 
 ## Why do we register Haxby to MNI space?
 
-Because Haxby is not primarily aligned with MNI 152 space, it is impossible to apply parcellations on the dataset using atlases that are in MNI 152 space (e.g: [Yeo 2011 (3)](#references)). This way, registering Haxby to MNI 152 space leads to new ways to analyze the dataset.
+Because Haxby is not primarily aligned with MNI 152 space, it is impossible to apply parcellations on the dataset using atlases that are in MNI 152 space (e.g: [Yeo 2011 (3)](#references)). This way, registering Haxby to MNI 152 space leads to new ways to analyze it.
 
 ## Pipeline
 
