@@ -33,6 +33,11 @@ mean_haxby = mean_img(func_filename)
 plotting.plot_glass_brain(mean_haxby)
 
 ```
+##Run code
+
+```sh
+python haxby-registration.py
+```
 
 ## References
 
