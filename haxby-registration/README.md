@@ -1,5 +1,5 @@
 # Haxby Registration 
-The Python code registers Haxby _[1]_ to MNI152 _[2] & [3]_ (~ 3H/subject).
+The Python code registers Haxby _[1]_ to MNI152 space _[2] & [3]_ (~ 3H/subject).
 
 ## Required Packages
 _numpy, nibabel, nilearn, dipy, tqdm_
@@ -10,7 +10,7 @@ pip install numpy nibabel nilearn dipy tqdm
 ```
 
 ## Before Registration
-Example of a Haxby image in the MNI152 template.
+Example of a Haxby image in the MNI152 template. The brain schematics is in MNI152 space. It can be seen that Haxby data (red/orange) is not in MNI152 space.
 
 <p align="center">
   <img  src="./images/before-registration.png">
