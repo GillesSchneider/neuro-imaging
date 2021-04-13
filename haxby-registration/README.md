@@ -16,7 +16,7 @@ pip install numpy nibabel nilearn dipy tqdm
   <img  src="./images/before-registration.png">
 </p>
 
-Code:
+Code to print the above image:
 ```sh
 #Import nilearn
 from nilearn import datasets 
