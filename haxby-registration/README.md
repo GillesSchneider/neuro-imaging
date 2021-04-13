@@ -54,10 +54,19 @@ plotting.plot_glass_brain(mean_haxby)
 ```
 ## After Registration
 
-A random Haxby volume of subject 2 after registration. 
+A random Haxby volume of subject 2 after registration. The image can be found in ./data/haxby_subj2_registred.nii.gz.
+
 <p align="center">
   <img  src="./images/after-registration.png">
 </p>
+
+```sh
+#Code to print the above image
+from nilearn.plotting import plot_glass_brain
+import nibabel as nib
+img = nib.load("./data/haxby_subj2_registred.nii.gz")
+plot_glass_brain(img)
+```
 
 ## Run code
 
