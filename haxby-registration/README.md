@@ -1,6 +1,10 @@
 # Haxby Registration 
 The Python code registers Haxby _[1]_ to MNI152 space _[2] & [3]_ (~ 3H/subject).
 
+## Why registering Haxby to MNI space is important?
+
+Because Haxby is not primarily aligned with MNI space, it is impossible to apply parcellations on Haxby using atlases (e.g: Yeo 2011 _[4]_). This way, registering Haxby to MNI space provides us new ways to analyze and understand it deeper than before. 
+
 ## Required Packages
 _numpy, nibabel, nilearn, dipy, tqdm_
 
@@ -49,3 +53,4 @@ python haxby-registration.py
 
 [3]. VS Fonov, AC Evans, RC McKinstry, CR Almli and DL Collins, Unbiased nonlinear average age-appropriate brain templates from birth to adulthood, NeuroImage, Volume 47, Supplement 1, July 2009, Page S102 Organization for Human Brain Mapping 2009 Annual Meeting, DOI: 10.1016/S1053-8119(09)70884-5
 
+[4]. http://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation_Yeo2011
