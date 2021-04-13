@@ -52,6 +52,13 @@ mean_haxby = mean_img(func_filename)
 plotting.plot_glass_brain(mean_haxby)
 
 ```
+## After Registration
+
+A random Haxby volume of subject 2 after registration. 
+<p align="center">
+  <img  src="./images/after-registration.png">
+</p>
+
 ## Run code
 
 ```sh
