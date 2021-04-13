@@ -1,4 +1,4 @@
-# Haxby Registration 
+# Haxby Registration to MNI 152 Space
 The Python code registers [Haxby (1)](#references) to [MNI152 space (2/3)](#references) (~ 3H/subject).
 
 ## Why do we register Haxby to MNI space?
