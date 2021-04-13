@@ -1,5 +1,5 @@
 # Haxby Registration 
-> Register Haxby [1] to MNI152 [2] & [3] (~ 3H/subject)
+> Register Haxby _[1]_ to MNI152 _[2] & [3]_ (~ 3H/subject)
 
 ## Required Packages
 _numpy, nibabel, nilearn, dipy, tqdm_
