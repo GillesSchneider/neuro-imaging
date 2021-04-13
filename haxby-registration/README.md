@@ -10,7 +10,7 @@ pip install numpy nibabel nilearn dipy tqdm
 ```
 
 ## Before Registration
-> Haxby image in the MNI152 template.
+> Haxby image in the MNI152 template
 
 <p align="center">
   <img  src="./images/before-registration.png">
