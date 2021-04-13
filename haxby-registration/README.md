@@ -1,5 +1,5 @@
-# Haxby Registration (~ 3H/subject)
-> Register Haxby Data to MNI template
+# Haxby Registration 
+> Register Haxby Data to MNI template (~ 3H/subject)
 
 ## Required Packages
 _numpy, nibabel, nilearn, dipy, tqdm_
