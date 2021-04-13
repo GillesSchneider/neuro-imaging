@@ -1,5 +1,5 @@
 # Haxby Registration 
-> Register Haxby [1] to MNI template (~ 3H/subject)
+> Register Haxby [1] to MNI152 [2] & [3] (~ 3H/subject)
 
 ## Required Packages
 _numpy, nibabel, nilearn, dipy, tqdm_
@@ -37,3 +37,8 @@ plotting.plot_glass_brain(mean_haxby)
 ## References
 
 [1]. Haxby, J., Gobbini, M., Furey, M., Ishai, A., Schouten, J., and Pietrini, P. (2001). Distributed and overlapping representations of faces and objects in ventral temporal cortex. Science 293, 2425-2430.
+
+[2] VS Fonov, AC Evans, K Botteron, CR Almli, RC McKinstry, DL Collins and BDCG, Unbiased average age-appropriate atlases for pediatric studies, NeuroImage, Volume 54, Issue 1, January 2011, ISSN 1053-8119, DOI: 10.1016/j.neuroimage.2010.07.033
+
+[3] VS Fonov, AC Evans, RC McKinstry, CR Almli and DL Collins, Unbiased nonlinear average age-appropriate brain templates from birth to adulthood, NeuroImage, Volume 47, Supplement 1, July 2009, Page S102 Organization for Human Brain Mapping 2009 Annual Meeting, DOI: 10.1016/S1053-8119(09)70884-5
+
