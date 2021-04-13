@@ -27,7 +27,7 @@ pip install numpy nibabel nilearn dipy tqdm
 ```
 
 ## Before Registration
-Example of a Haxby image in the MNI152 template.
+Example of a Haxby 3D volume in the MNI152 template. The 3D volume is from subject 2 and is the mean along the axis 3, which is the time. 
 
 <p align="center">
   <img  src="./images/before-registration.png">
