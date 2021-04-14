@@ -1,6 +1,22 @@
 # Haxby Registration 
 The Python code registers [Haxby](#references) to [MNI152 space](#references) (~ 3H/subject).
-
+The affine of Haxby images is: 
+```sh
+[[  -3.5      0.       0.      68.25 ]
+ [   0.       3.75     0.    -118.125]
+ [   0.       0.       3.75  -118.125]
+ [   0.       0.       0.       1.   ]]
+ ```
+ 
+ The affine of MNI 152 space is:
+ 
+ ```sh
+ [[  -2.    0.    0.   90.]
+ [   0.    2.    0. -126.]
+ [   0.    0.    2.  -72.]
+ [   0.    0.    0.    1.]]
+  ```
+  
 ## Why do we register Haxby to MNI space?
 
 Because Haxby is not primarily aligned with MNI 152space, it is impossible to apply parcellations on the dataset using atlases that are in MNI 152 space (e.g: [Yeo 2011](#references)). This way, registering Haxby to MNI 152 space leads to new ways to analyze the dataset.
