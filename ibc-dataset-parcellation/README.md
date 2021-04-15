@@ -1,6 +1,7 @@
 # IBC2 Pytorch Dataset for brain parcellation
 
 The code creates a custom Pytorch Dataset for **Individual Brain Charting release 2 (1)** for brain parcellation. 
+
 First of all, fetch IBC 2 with nilearn:
 
 ```sh
