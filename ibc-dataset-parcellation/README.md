@@ -14,7 +14,7 @@ tasks = ['hcp-motor'] #HCP Motor
 contrasts =  ['Move left foot', 'Move left hand', 'Move right foot', 'Move tongue']
 ```
 
-_Please refers to [Individual Brain Charting release 2 (1)](##references) for more information about the data._
+_Please refers to [Individual Brain Charting release 2 (1)](//https://doi.org/10.1038/s41597-020-00670-4) for more information about the data._
 
 Get the dataset, and you are ready to go!
 
