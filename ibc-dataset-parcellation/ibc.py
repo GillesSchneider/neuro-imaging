@@ -26,7 +26,10 @@ from nilearn.input_data import NiftiMasker,NiftiLabelsMasker
 '''
 ...IBC 2 dataset for brain parcellation:
 ...Works for IBC release 2 AND only with atlas (ex: BASC 64, 122, etc.) in the MNI space
-...The dataset contains 2D slices (z) and is contrast specific within task
+...The dataset contains:
+- 2D slices of IBC images
+- 2D slices of corresponding parcellation
+- contrast associated with the 3D images
 '''
 #ibc_data = nilearn.datasets.fetch_neurovault_ids(collection_ids=["6618"])
 
