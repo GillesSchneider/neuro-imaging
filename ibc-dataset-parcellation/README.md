@@ -21,6 +21,7 @@ Get the dataset, and you are ready to go!
 ```sh
 ibc_dataset = IBC2d(ibc_data, subjects, tasks, contrasts)
 ```
+The dataset will contain 2D slices (z by default) of original images, corresponding 2D slices (z by default) after parcellation, and the contrast associated with them. 
 
 ## Disclaimer
 
