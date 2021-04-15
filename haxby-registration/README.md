@@ -54,7 +54,7 @@ plotting.plot_glass_brain(mean_haxby)
 ```
 ## After Registration
 
-A random Haxby volume of subject 2 after registration. The image can be found in ./data/bold.nii.gz.
+The volume is taken from Haxby, subject 2 with time t = 100 after registration. The image can be found in ./data/bold.nii.gz.
 
 <p align="center">
   <img  src="./images/after-registration.png">
