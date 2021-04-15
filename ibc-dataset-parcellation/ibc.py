@@ -109,7 +109,12 @@ class IBC2d(Dataset):
 		
 		#Compute parcellation
 		nib_src = nb.Nifti1Image(src_arrs, init.affine)
+
+		#Prepare and perform signal extraction from regions
 		nib_tgt = parcel.fit_transform(nib_src)
+
+		#Compute voxel signals from regions signal
+		#Each voxel is assigned the value of its region
 		nib_tgt = parcel.inverse_transform(nib_tgt)
 		
 		#Create a folder to save parcellations
