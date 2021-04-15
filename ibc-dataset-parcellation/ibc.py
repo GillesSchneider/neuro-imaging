@@ -132,13 +132,16 @@ class IBC2d(Dataset):
 		return len(self.src_arrs)*self.depth
 		
 	def __getitem__(self,idx:int):
+		#Find image and slice
 		idx_img = idx // self.depth
 		idx_slice = idx % self.depth
 
+		#Load image, parcellation, and task (optional)
 		src_arr = nb.load(self.src_arrs[idx_img]).get_fdata(dtype=np.float32)
 		tgt_arr = nb.load(self.tgt_fns[idx_img]).get_fdata(dtype=np.float32)
 		task = self.tasks[idx_img]
 
+		#Swap axes
 		src_arr = src_arr.swapaxes(0,self.axis)[idx_slice]
 		tgt_arr = tgt_arr.swapaxes(0,self.axis)[idx_slice]
 
