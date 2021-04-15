@@ -109,7 +109,8 @@ class IBC2d(Dataset):
 		nib_tgt = parcel.fit_transform(nib_src)
 		nib_tgt = parcel.inverse_transform(nib_tgt)
 		
-		#Create a folder to save parcellations in the current folder
+		#Create a folder to save parcellations
+		#TO-DO: ask the path to user
 		path = './parc/'
 		if os.path.exists(path):
 			pass
