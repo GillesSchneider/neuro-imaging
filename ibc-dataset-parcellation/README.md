@@ -1,6 +1,6 @@
 # IBC2 Pytorch Dataset for brain parcellation
 
-The code creates a custom Pytorch Dataset for [Individual Brain Charting release 2 (1)](##references) for brain parcellation. 
+The code creates a custom Pytorch Dataset for [Individual Brain Charting release 2 (1)](/https://doi.org/10.1038/s41597-020-00670-4) for brain parcellation. 
 First of all, fetch IBC 2 with nilearn:
 
 ```sh
@@ -25,7 +25,7 @@ The dataset will contain 2D slices (z by default) of original images, correspond
 
 ## Disclaimer
 
-Please note that the dataset works only with altas in MNI space. It will not work with parcellations such as Ward or Kmeans etc. For instance, use [BASC (2)](##references). 
+Please note that the dataset works only with altas in MNI space. It will not work with parcellations such as Ward or Kmeans etc. For instance, use [BASC (2)](/http://dx.doi.org/10.1016/j.neuroimage.2010.02.082). 
 
 ## Packages
 
