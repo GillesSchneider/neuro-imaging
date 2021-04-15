@@ -3,6 +3,6 @@ Neuro imaging projects and tools
 
 - [Haxby Registration to MNI 152 space](/haxby-registration)
 
-- [Haxby Loader for Deep Learning](/haxby-loader)
+- [Haxby dataset for parcellation for brain parcellation](/haxby-dataset-parcellation)
 
-- [IBC Loader for Deep Learning](/ibc-loader)
+- [Individual Brain Charting 2 dataset for brain parcellation](/ibc-dataset-parcellation)
