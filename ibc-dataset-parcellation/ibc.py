@@ -33,7 +33,7 @@ class IBC():
 	#This class aims to search images of subject(s)/task(s)/condition(s)
 	
 	def __init__(self, ibc_data):
-		#Get the lists of subject names, contrasts, tasks and images
+		#Get the lists of subject names, contrasts, tasks and images of every image
 				
 		self.subjectnames = [cur['name'][:6] for cur in ibc_data.images_meta]
 		self.contrasts = [cur['contrast_definition'] for cur in ibc_data.images_meta]
