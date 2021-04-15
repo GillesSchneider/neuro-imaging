@@ -8,4 +8,4 @@ The code defines a Pytorch Dataset for **Individual Brain Charting release 2** f
 
 The following python packages are required: _numpy, matplotlib, sklearn, scipy, torch, nilearn, nibabel, itertools_.
 
-Please make sure that all the packages mentioned below are installed prior to the use of the code.
+Please make sure that all the packages mentioned above are installed prior to the use of the code.
