@@ -1,3 +1,84 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from itertools import compress
+
+import os
+import shutil
+import random
+import json 
+
+from sklearn import preprocessing
+from sklearn.utils import shuffle
+from sklearn.model_selection import KFold, StratifiedKFold
+from collections import Counter
+from scipy.optimize import fsolve
+
+import torch
+from torch.utils.data import DataLoader,random_split
+from torch.utils.data.dataset import Dataset
+from torch.utils.data import SubsetRandomSampler, Subset
+
+import nilearn
+import nibabel as nb
+from nilearn import datasets
+from nilearn.input_data import NiftiMasker,NiftiLabelsMasker
+
+'''
+...IBC 2 dataset for brain parcellation:
+...Works for IBC release 2 AND only with atlas (ex: BASC 64, 122, etc.) in the MNI space
+...The dataset contains 2D slices (z) and is contrast specific within task
+'''
+ibc_data = nilearn.datasets.fetch_neurovault_ids(collection_ids=["6618"])
+
+class IBC():
+	#This class aims to search images of subject(s)/task(s)/condition(s)
+	
+	def __init__(self, ibc_data):
+		#Get the lists of subject names, contrasts, tasks and images
+				
+		self.subjectnames = [cur['name'][:6] for cur in ibc_data.images_meta]
+		self.contrasts = [cur['contrast_definition'] for cur in ibc_data.images_meta]
+		self.tasks = [cur['task'] for cur in ibc_data.images_meta]
+		self.images = ibc_data.images
+
+	def __getsourcetarget__(self, target_tasks:list, target_subjects:list, target_contrasts:list):
+
+		#Find the corresponding tasks
+		bin_tasks = find(self.tasks, target_tasks) #binarize
+		subjectnames = list(compress(self.subjectnames, bin_tasks))
+		allcontrasts = list(compress(self.contrasts, bin_tasks))
+		alltasks = list(compress(self.tasks, bin_tasks))
+		images = list(compress(self.images, bin_tasks)) 
+
+		#Select subjects
+		bin_subjectnames = find(subjectnames, target_subjects)
+		subjectnames = list(compress(subjectnames, bin_subjectnames))
+		allcontrasts = list(compress(allcontrasts, bin_subjectnames))
+		alltasks = list(compress(alltasks, bin_subjectnames))
+		images = list(compress(images, bin_subjectnames))
+		
+		#Select contrasts, make sure that contrasts are valid
+		bin_contrasts = find(allcontrasts, target_contrasts)
+		allcontrasts = list(compress(allcontrasts, bin_contrasts))
+		subjectnames = list(compress(subjectnames, bin_contrasts))
+		images = list(compress(images, bin_contrasts))
+
+		return images, allcontrasts, alltasks
+
+
+class IBC2d(Dataset):
+	
+	def __init__(self, ibc_data:dict, subjects:list, tasks:list, contrasts:list, parcel:NiftiLabelsMasker, axis=2):
+		#Create IBC 2 dataset under specific constraints
+		#ibc_data : dictionnary fetched with nilearn
+		#subjects : list of subject(s)
+		#tasks : list of task(s)
+		#contrast : list of constrast(s)
+		#parcel: the desired parcellation
+		#axis : the axis used to cut volumes, default : 2 -> z
+
+		#Search the images that fit the conditions
+		ibc = IBC(ibc_data)
 		source_fns, contrasts, tasks = ibc.__getsourcetarget__(tasks, subjects, contrasts)
 		
 		#Encode contrasts to integers
