@@ -28,7 +28,7 @@ from nilearn.input_data import NiftiMasker,NiftiLabelsMasker
 ...Works for IBC release 2 AND only with atlas (ex: BASC 64, 122, etc.) in the MNI space
 ...The dataset contains 2D slices (z) and is contrast specific within task
 '''
-ibc_data = nilearn.datasets.fetch_neurovault_ids(collection_ids=["6618"])
+#ibc_data = nilearn.datasets.fetch_neurovault_ids(collection_ids=["6618"])
 
 class IBC():
 	#This class aims to search images of subject(s)/task(s)/condition(s)
