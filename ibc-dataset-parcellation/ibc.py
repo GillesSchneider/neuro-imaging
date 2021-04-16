@@ -88,7 +88,7 @@ class IBC2d(Dataset):
 		self.parcel = parcel
 		self.src_arrs = source_fns
 		self.ibc = ibc
-		self.tasks = tasks
+		self.contrasts = contrasts
 		
 		imgs, init = [], nb.load(source_fns[0])
 		
@@ -143,13 +143,13 @@ class IBC2d(Dataset):
 		#Load image, parcellation, and task (optional)
 		src_arr = nb.load(self.src_arrs[idx_img]).get_fdata(dtype=np.float32)
 		tgt_arr = nb.load(self.tgt_fns[idx_img]).get_fdata(dtype=np.float32)
-		task = self.tasks[idx_img]
+		contrast = self.contrasts[idx_img]
 
 		#Swap axes
 		src_arr = src_arr.swapaxes(0,self.axis)[idx_slice]
 		tgt_arr = tgt_arr.swapaxes(0,self.axis)[idx_slice]
 
-		sample = (src_arr[None,:,:], tgt_arr[None,:,:], task, idx_slice)
+		sample = (src_arr[None,:,:], tgt_arr[None,:,:], contrast, idx_slice)
 
 		return sample
 		
